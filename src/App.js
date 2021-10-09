@@ -18,7 +18,7 @@ export default class App extends Component {
   };
 
   componentDidMount() {
-    const contacts = localStorage.getItem("localDataContacts");
+    const contacts = localStorage.getItem('localDataContacts');
     const parsContacts = JSON.parse(contacts);
     if (parsContacts) {
       this.setState({ contacts: parsContacts });
@@ -27,7 +27,10 @@ export default class App extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
-      localStorage.setItem("localDataContacts", JSON.stringify(this.state.contacts));
+      localStorage.setItem(
+        'localDataContacts',
+        JSON.stringify(this.state.contacts),
+      );
     }
   }
 
